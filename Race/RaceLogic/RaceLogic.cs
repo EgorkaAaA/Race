@@ -11,20 +11,20 @@ namespace Race.RaceLogic
     {
         private static double raceDistance = 100;
 
-        public static double TimeForRace(double speed)
-        {
-            return Math.Round(raceDistance / speed, 2) ;
-        }
+        public static double TimeForRace(double speed) => Math.Round(raceDistance / speed, 2) ;
+        
 
         public static bool theWheelIsPierced(double wheelPunctureProbability)
         {
             Random random = new Random(); 
-            return random.Next(0,100) <= wheelPunctureProbability ? true : false;
+            return random.NextDouble() * 100 >= wheelPunctureProbability ? true : false;
         }
 
         public static string result(Car car)
         {
-            return  car.getClassName() + "\nвремя: " + TimeForRace(car.Speed) + "ч.\nсо скоростью: " + car.Speed;
+            return  theWheelIsPierced(car.WheelPunctureProbability) ?
+                $"{car.getClassName()}\nвремя: {TimeForRace(car.Speed)}ч.\nсо скоростью: {car.Speed}"
+                : $"у {car.getClassName()} спустилось колесо(((";
         }
     }
 }

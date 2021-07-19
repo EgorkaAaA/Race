@@ -27,16 +27,10 @@ namespace Race.Models
             PeopleCount = peopleCount;
         }
 
-        public override string ToString()
-        {
-            return "Скорость легковушки: " + Speed +
+        public override string ToString() => "Скорость легковушки: " + Speed +
                 "\nВерояность пробоины в колесе: " + WheelPunctureProbability +
                 "\nКоличество людей в автомобиле: " + PeopleCount;
-        }
 
-        public override string getClassName()
-        {
-            return "Легковушка";
-        } 
+        public override string getClassName() => "Легковушка";
     }
 }

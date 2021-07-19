@@ -24,7 +24,7 @@ namespace Race.Models
             Random random = new Random();
             this.Stroller = false;
             this.Speed = random.NextDouble() * 150 + 1;
-            this.WheelPunctureProbability = random.NextDouble() * 16;
+            this.WheelPunctureProbability = random.NextDouble() * 30;
         }
 
         public override string ToString()
@@ -34,14 +34,8 @@ namespace Race.Models
                 "\nНаличе коляски: " + strollerToSTring();
         }
 
-        private string  strollerToSTring()
-        {
-            return Stroller ? "есть" : "нет";
-        }
+        private string strollerToSTring() => Stroller ? "есть" : "нет";
 
-        public override string getClassName()
-        {
-            return "Мотоцикл";
-        }
+        public override string getClassName() => "Мотоцикл";
     }
 }
