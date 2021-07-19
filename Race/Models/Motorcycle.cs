@@ -14,17 +14,34 @@ namespace Race.Models
 
         public Motorcycle(bool stroller, double speed, double wheelPunctureProbability)
         {
-            Stroller = stroller;
-            WheelPunctureProbability = wheelPunctureProbability;
-            Speed = speed;
+            this.Stroller = stroller;
+            this.WheelPunctureProbability = wheelPunctureProbability;
+            this.Speed = speed;
         }
 
         public Motorcycle()
         {
             Random random = new Random();
-            Stroller = false;
-            Speed = random.NextDouble() * 120 + 1;
-            WheelPunctureProbability = random.NextDouble() * 15;
+            this.Stroller = false;
+            this.Speed = random.NextDouble() * 150 + 1;
+            this.WheelPunctureProbability = random.NextDouble() * 16;
+        }
+
+        public override string ToString()
+        {
+            return "Скорость мотоцикла: " + this.Speed +
+                "\nВерояность пробоины в колесе: " + this.WheelPunctureProbability +
+                "\nНаличе коляски: " + strollerToSTring();
+        }
+
+        private string  strollerToSTring()
+        {
+            return Stroller ? "есть" : "нет";
+        }
+
+        public override string getClassName()
+        {
+            return "Мотоцикл";
         }
     }
 }

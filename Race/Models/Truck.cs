@@ -16,7 +16,7 @@ namespace Race.Models
         {
             Random random = new Random();
             this.Speed = random.NextDouble() * 80 + 1;
-            this.WheelPunctureProbability = random.NextDouble() * 15;
+            this.WheelPunctureProbability = random.NextDouble() * 14;
             this.Weight = random.Next(0,1500);
 
         }
@@ -27,5 +27,16 @@ namespace Race.Models
             this.Weight = weight;
         }
 
+        public override string ToString()
+        {
+            return "Скорость грузовик: " + Speed +
+                "\nВерояность пробоины в колесе: " + WheelPunctureProbability +
+                "\nВес перевозимый грузовиком: " + Weight;
+        }
+
+        public override string getClassName()
+        {
+            return "Грузовик";
+        }
     }
 }

@@ -26,5 +26,17 @@ namespace Race.Models
             WheelPunctureProbability = wheelPunctureProbability;
             PeopleCount = peopleCount;
         }
+
+        public override string ToString()
+        {
+            return "Скорость легковушки: " + Speed +
+                "\nВерояность пробоины в колесе: " + WheelPunctureProbability +
+                "\nКоличество людей в автомобиле: " + PeopleCount;
+        }
+
+        public override string getClassName()
+        {
+            return "Легковушка";
+        } 
     }
 }

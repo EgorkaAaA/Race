@@ -11,7 +11,9 @@ namespace Race.Models
         private double speed;
         private double wheelPunctureProbability;
 
-        public double Speed { get => speed; set => speed = value; }
-        public double WheelPunctureProbability { get => wheelPunctureProbability; set => wheelPunctureProbability = value; }
+        public double Speed { get => Math.Round(speed,2); set => speed = value; }
+        public double WheelPunctureProbability { get => Math.Round(wheelPunctureProbability, 2); set => wheelPunctureProbability = value; }
+
+        public abstract string getClassName();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Race.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +11,20 @@ namespace Race.RaceLogic
     {
         private static double raceDistance = 100;
 
-        public static double TimeForRace(double speeed)
+        public static double TimeForRace(double speed)
         {
-            return speeed / raceDistance;
+            return Math.Round(raceDistance / speed, 2) ;
         }
 
         public static bool theWheelIsPierced(double wheelPunctureProbability)
         {
             Random random = new Random(); 
             return random.Next(0,100) <= wheelPunctureProbability ? true : false;
+        }
+
+        public static string result(Car car)
+        {
+            return  car.getClassName() + "\nвремя: " + TimeForRace(car.Speed) + "ч.\nсо скоростью: " + car.Speed;
         }
     }
 }
