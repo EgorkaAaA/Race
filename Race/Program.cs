@@ -11,7 +11,8 @@ namespace Race
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Добро пожаловть в уличные гонки! " +
+                "\nДля того чтобы запустить гонку со случайными характеристиками  ")
         }
     }
 }
