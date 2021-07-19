@@ -12,7 +12,7 @@ namespace Race
         static void Main(string[] args)
         {
             Console.WriteLine("Добро пожаловть в уличные гонки! " +
-                "\nДля того чтобы запустить гонку со случайными характеристиками машин нажмите 1");
+                "\nДля того чтобы запустить гонку со случайными характеристиками машин нажмите любую клавишу");
             ConsoleKey key = Console.ReadKey().Key;
 
             Console.Clear();
